@@ -13,12 +13,8 @@ public class Exercicio11 {
         n = s.nextInt();
         System.out.println("");
 
-        if (n % 2 == 0) {
-            resultado = "PAR";
-        } else {
-            resultado = "ÍMPAR";
-        }
-
+        resultado = n % 2 == 0 ? "PAR" : "ÍMPAR";
+        
         System.out.println("Número " + n + " é " + resultado);
     }
 }
