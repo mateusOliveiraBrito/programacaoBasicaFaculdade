@@ -27,6 +27,7 @@ public class Exercicio03 {
         areaTriangulo = (base * altura) / 2;
         diferenca = areaTriangulo - areaCirculo;
 
+        //imprime os dados no console
         System.out.println("Área do círculo: " + format.format(areaCirculo));
         System.out.println("Área do triângulo: " + format.format(areaTriangulo));
         System.out.println("A diferença entre a área do triângulo pela área do círculo é: " + format.format(diferenca));
