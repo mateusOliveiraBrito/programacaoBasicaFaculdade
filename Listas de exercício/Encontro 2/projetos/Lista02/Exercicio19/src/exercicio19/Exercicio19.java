@@ -28,21 +28,26 @@ public class Exercicio19 {
         codigo = s.nextInt();
         System.out.println("");
 
-        if (codigo == 1) {
-            operacao = "Depósito";
-            System.out.print("Informe um valor de " + operacao + ": ");
-            valor = s.nextDouble();
-            saldo += valor;
-        } else if (codigo == 2) {
-            operacao = "Saque";
-            System.out.print("Informe um valor de " + operacao + ": ");
-            valor = s.nextDouble();
-            saldo -= valor;
+        switch (codigo) {
+            case 1:
+                operacao = "Depósito";
+                System.out.print("Informe um valor de " + operacao + ": ");
+                valor = s.nextDouble();
+                saldo += valor;
+                break;
+            case 2:
+                operacao = "Saque";
+                System.out.print("Informe um valor de " + operacao + ": ");
+                valor = s.nextDouble();
+                saldo -= valor;
+                break;
+            default:
+                System.out.println("Opção inválida!");
         }
-        
+
         System.out.println("Novo saldo da conta: ");
         System.out.println("Saldo da conta: " + d.format(saldo));
-        
+
         if (saldo < 0) {
             System.out.println("Conta estourada!");
         }
