@@ -205,37 +205,4 @@ public class Tabela {
             }
         }
     }
-
-    public int[] retornaValoresMaioresIndicesOrdenados(int[][] matriz) {
-        int maior = 0;
-        String indicesCompactados = "";
-        for (int i = 0; i < this.linhas; i++) {
-            indicesCompactados += matriz[i][0] + ",";
-        }
-
-        String[] indices = indicesCompactados.split(",");
-
-        int[] indicesOrdenadosCrescente = new int[indices.length];
-        int[] indicesOrdenadosDecrescentes = new int[indices.length];
-
-        for (int i = 0; i < this.linhas; i++) {
-            for (int j = 0; j < this.colunas; j++) {
-                this.indicesLinhas[i] = i;
-            }
-        }
-
-        for (int i = 0; i < indices.length; i++) {
-            indicesOrdenadosCrescente[i] = Integer.parseInt(indices[i]);
-        }
-
-        Arrays.sort(indicesOrdenadosCrescente);
-
-        int cont = indices.length;
-        for (int numero : indicesOrdenadosCrescente) {
-            indicesOrdenadosDecrescentes[cont - 1] = numero;
-            cont--;
-        }
-
-        return indicesOrdenadosDecrescentes;
-    }
 }
