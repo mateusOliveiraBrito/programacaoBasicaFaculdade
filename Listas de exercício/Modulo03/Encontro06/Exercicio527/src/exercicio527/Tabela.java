@@ -182,7 +182,6 @@ public class Tabela {
         int[] valoresDosIndices = retornaValoresMaioresIndicesOrdenados(tabelaInicial);
         int[][] auxiliar = new int[this.linhas][this.colunas];
         int controle = 0;
-        int contLoops = 0;
 
         for (int i = 0; i < this.linhas; i++) {
             if (tabelaInicial[i][0] == valoresDosIndices[controle]) {
@@ -197,9 +196,8 @@ public class Tabela {
                 continue;
             }
             if (i <= this.linhas) {
-                    i = 0;
-                }
-            contLoops++;
+                i = 0;
+            }
         }
 
         for (int i = 0; i < this.linhas; i++) {
