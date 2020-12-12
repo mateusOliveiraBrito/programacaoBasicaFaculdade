@@ -179,30 +179,29 @@ public class Tabela {
     }
 
     public void ordenaTabela() {
-        int[] valoresDosIndices = retornaValoresMaioresIndicesOrdenados(tabelaInicial);
-        int[][] auxiliar = new int[this.linhas][this.colunas];
-        int controle = 0;
+        int[] linhaTemporaria = new int[this.colunas];
 
         for (int i = 0; i < this.linhas; i++) {
-            if (tabelaInicial[i][0] == valoresDosIndices[controle]) {
-                for (int j = 0; j < this.colunas; j++) {
-                    auxiliar[controle][j] = tabelaInicial[i][j];
+            for (int j = 0; j < this.colunas; j++) {
+                if (tabelaInicial[i][0] > tabelaInicial[j][0]) {
+                    for (int k = 0; k < this.colunas; k++) {
+                        linhaTemporaria[k] = tabelaInicial[i][k];
+                    }
+
+                    for (int k = 0; k < this.colunas; k++) {
+                        tabelaInicial[i][k] = tabelaInicial[j][k];
+                    }
+
+                    for (int k = 0; k < this.colunas; k++) {
+                        tabelaInicial[j][k] = linhaTemporaria[k];
+                    }
                 }
-                if (i <= this.linhas) {
-                    i = 0;
-                }
-                controle++;
-            } else {
-                continue;
-            }
-            if (i <= this.linhas) {
-                i = 0;
             }
         }
 
         for (int i = 0; i < this.linhas; i++) {
             for (int j = 0; j < this.colunas; j++) {
-                tabela[i][j] = auxiliar[i][j];
+                tabela[i][j] = tabelaInicial[i][j];
             }
         }
     }

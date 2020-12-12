@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercicio527 {
 
     public static void main(String[] args) {
-        final int LINHAS = 5;
+        final int LINHAS = 3;
         final int COLUNAS = 3;
 
         Tabela tabela = new Tabela(LINHAS, COLUNAS);
