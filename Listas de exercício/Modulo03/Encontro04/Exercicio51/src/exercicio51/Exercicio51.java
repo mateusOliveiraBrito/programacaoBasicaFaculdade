@@ -25,12 +25,24 @@ public class Exercicio51 {
             System.out.print("Informe o código da " + (i + 1) + "° disciplina: ");
             r.codigo = s.nextLong();
 
+            if (String.valueOf(r.codigo).length() > 6 || String.valueOf(r.codigo).length() < 6) {
+                System.out.println("Tamanho do código inválido!");
+                i--;
+                continue;
+            }
+
             System.out.print("Informe o nome da " + (i + 1) + "° disciplina: ");
             r.nome = s.next();
 
+            if (r.nome.length() > 40) {
+                System.out.println("Tamanho do nome inválido!");
+                i--;
+                continue;
+            }
+
             System.out.print("Informe o período da " + (i + 1) + "° disciplina: ");
             r.periodo = s.nextInt();
-            
+
             registros[i] = r;
             System.out.println("");
         }
